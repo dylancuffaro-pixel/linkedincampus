@@ -1,0 +1,6 @@
+{
+  "name": "LinkedIn Campus - Professional Training Wheels",
+  "description": "Professional training wheels for college students and young professionals transitioning to corporate life, featuring interactive crash courses, post templates, real-time AI tone coaching, and a weekly prompt sandbox.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
