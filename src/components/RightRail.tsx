@@ -108,8 +108,8 @@ export const RightRail: React.FC<RightRailProps> = ({
             <BookOpen className="w-3.5 h-3.5 text-amber-500" />
             <span>Buzzword of the Day</span>
           </span>
-          <span className="text-[10px] bg-red-100 text-red-800 px-1.5 py-0.2 rounded font-bold">
-            High Cringe
+          <span className="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.2 rounded font-bold">
+            Overused
           </span>
         </div>
 

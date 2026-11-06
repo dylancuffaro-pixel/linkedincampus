@@ -79,7 +79,7 @@ export const CRASH_COURSE_MODULES: CourseModule[] = [
   },
   {
     id: 'module-outreach',
-    title: 'Cold Outreach Without the Cringe',
+    title: 'Cold Outreach Without the Awkwardness',
     duration: '5 min',
     summary: 'Master the 3-sentence connection note that alumni and hiring managers actually accept and reply to.',
     iconName: 'Send',

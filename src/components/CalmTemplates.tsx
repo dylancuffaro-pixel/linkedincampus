@@ -180,7 +180,7 @@ export const CalmTemplates: React.FC<CalmTemplatesProps> = ({ onAddPost }) => {
           >
             <span className="text-xs sm:text-sm font-semibold text-slate-800 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              <span>See What a Finished, Non-Cringe Post Looks Like</span>
+              <span>See What a Finished, Natural Post Looks Like</span>
             </span>
             {openSection === 'example' ? (
               <ChevronUp className="w-4 h-4 text-slate-400" />

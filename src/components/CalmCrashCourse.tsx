@@ -178,7 +178,7 @@ export const CalmCrashCourse: React.FC<CalmCrashCourseProps> = ({
 
                             <div className="p-3 bg-red-50/70 border border-red-200 rounded-lg text-red-950">
                               <span className="font-bold text-red-800 text-[10px] block uppercase mb-1">
-                                ✗ Cringe / Intimidating Way:
+                                ✗ Stiff / Robotic Way:
                               </span>
                               <p className="leading-relaxed">{item.dont}</p>
                             </div>

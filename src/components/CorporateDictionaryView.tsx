@@ -13,12 +13,12 @@ import { CORPORATE_DICTIONARY, JargonEntry } from '../data/dictionaryData';
 
 export const CorporateDictionaryView: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCringe, setSelectedCringe] = useState<'All' | 'Mild' | 'High' | 'Terminal'>('All');
+  const [selectedLevel, setSelectedLevel] = useState<'All' | 'Common' | 'Overused' | 'Avoid'>('All');
   const [expandedTerm, setExpandedTerm] = useState<string | null>(null);
   const [copiedTerm, setCopiedTerm] = useState<string | null>(null);
 
   const filteredEntries = CORPORATE_DICTIONARY.filter((entry) => {
-    if (selectedCringe !== 'All' && entry.cringeLevel !== selectedCringe) {
+    if (selectedLevel !== 'All' && entry.level !== selectedLevel) {
       return false;
     }
     if (
@@ -37,14 +37,14 @@ export const CorporateDictionaryView: React.FC = () => {
     setTimeout(() => setCopiedTerm(null), 1800);
   };
 
-  const getCringeBadgeStyle = (level: 'Mild' | 'High' | 'Terminal') => {
+  const getLevelBadgeStyle = (level: 'Common' | 'Overused' | 'Avoid') => {
     switch (level) {
-      case 'Mild':
+      case 'Common':
         return 'bg-blue-50 text-blue-700 border-blue-200';
-      case 'High':
+      case 'Overused':
         return 'bg-amber-50 text-amber-700 border-amber-200';
-      case 'Terminal':
-        return 'bg-red-50 text-red-700 border-red-200';
+      case 'Avoid':
+        return 'bg-slate-100 text-slate-700 border-slate-200';
     }
   };
 
@@ -81,17 +81,17 @@ export const CorporateDictionaryView: React.FC = () => {
           </div>
 
           <div className="flex items-center justify-center gap-1.5 text-xs">
-            {(['All', 'Mild', 'High', 'Terminal'] as const).map((lvl) => (
+            {(['All', 'Common', 'Overused', 'Avoid'] as const).map((lvl) => (
               <button
                 key={lvl}
-                onClick={() => setSelectedCringe(lvl)}
+                onClick={() => setSelectedLevel(lvl)}
                 className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors ${
-                  selectedCringe === lvl
+                  selectedLevel === lvl
                     ? 'bg-slate-900 text-white'
                     : 'bg-slate-100 text-slate-600 hover:text-slate-900'
                 }`}
               >
-                {lvl === 'All' ? 'All Buzzwords' : `${lvl} Cringe`}
+                {lvl === 'All' ? 'All Buzzwords' : lvl}
               </button>
             ))}
           </div>
@@ -125,11 +125,11 @@ export const CorporateDictionaryView: React.FC = () => {
 
                 <div className="flex items-center gap-2">
                   <span
-                    className={`text-[10px] font-bold px-2 py-0.5 rounded border ${getCringeBadgeStyle(
-                      entry.cringeLevel
+                    className={`text-[10px] font-bold px-2 py-0.5 rounded border ${getLevelBadgeStyle(
+                      entry.level
                     )}`}
                   >
-                    {entry.cringeLevel}
+                    {entry.level}
                   </span>
                   {isExpanded ? (
                     <ChevronUp className="w-4 h-4 text-slate-400" />
